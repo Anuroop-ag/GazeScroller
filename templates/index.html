@@ -1,0 +1,92 @@
+<!doctype html>
+  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaze Scrolling</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.js"> </script>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+         
+  </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="#default" class="logo">Scrolling using Eye - Gaze</a>
+    </div>
+    <div style="background-color: aliceblue;">
+        <div 
+       >
+            <div class="group1">
+                <div class="input-container">
+                    <p>
+                        The project captures live stream of the video via webcam of the system and use the head movement to scroll pages of the PDF. 
+                    </p>
+                    <p>
+                        For Detailed Docs visit <a href="https://github.com/Anuroop-ag"> Github</a> 
+                        <!-- <ul>
+                            <li>Detect blink of one eye to enable/disable Gaze Scrolling</li>
+                            <li>Detect the scroll movement based on the movement of the movement of the head</li>
+                        </ul> -->
+            
+                    </p>
+                </div>
+                
+              </div>
+        
+              <div class="group1">
+                <div class="input-container margin--b10">
+                    <p>Choose the PDF file you would like to read and click Enable Gestures! </p>
+                    <p>
+                        <input type="file" id="file">
+                    </p>
+                    <p id="enable">
+                        Enable/Disable Face Gestures! 
+                    </p>
+                </div>
+                <div class="btn-container margin--b10">
+                    <button id ="start" onclick="start()">Start Video Capture</button>
+                    <button id ="end" onclick="end()">End Video Capture</button>
+                </div>
+                <div id="face" class="img-container"> 
+                    <img id='bg'  >
+                    <!-- <div id='bg'>
+                        a
+                    </div> -->
+                </div>
+              </div>
+        </div>
+
+     
+        
+    
+        <div id='pdf_container' class="pdf-container">
+            <h2> PDF Document</h2>
+            <div class="pdf-holder">
+                <div style="
+                width: 15%;
+                margin-left:0.5vw">Controls:
+                    <div>
+                        <!-- <i class="fas fa-sort-up"></i> -->
+                        <!-- <i class="fas fa-sort-down"></i> -->
+                        <i class="glyphicon glyphicon-eye-open"> <span class="font"> Blink (Any one) Eye to start/end scroll feature.</span></i>
+                        <i class="glyphicon glyphicon-chevron-up"> <span class="font">Head Movement Down </span></i>
+                        <i class="glyphicon glyphicon-chevron-down"> <span class="font">Head Movement Down </span></i>
+    
+                    
+                    </div>
+                </div>
+                <div id='pdf-viewer'></div>
+            </div>
+        </div>
+
+        
+        <script type="text/javascript" src="{{url_for('static', filename='main.js')}}"></script>
+    </div>
+
+    
+</body>
+</html>
